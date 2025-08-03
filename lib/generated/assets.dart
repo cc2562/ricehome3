@@ -2,7 +2,7 @@
 class Assets {
   Assets._();
 
-  static const String assetsAboutimage = 'lib/assets/aboutimage.png';
+  static const String assetsAboutimage = 'lib/assets/aboutimage.webp';
   static const String assetsAboutme = 'lib/assets/aboutme.md';
   static const String assetsImg = 'lib/assets/img.png';
   static const String assetsTopimage = 'lib/assets/topimage.png';
