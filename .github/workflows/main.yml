@@ -1,7 +1,7 @@
 name: Flutter Web Build & EdgeOne Deploy
 on:
   push:
-    branches: [ main ] 
+    branches: [ main ]
 
 jobs:
   build-and-deploy:
