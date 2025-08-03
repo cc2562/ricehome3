@@ -1,0 +1,35 @@
+name: Flutter Web Build & EdgeOne Deploy
+on:
+  push:
+    branches: [ main ] 
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: stable 
+          flutter-version: '3.32.6'  
+
+      - name: Install Dependencies
+        run: flutter pub get
+
+      - name: Build Web Release
+        run: flutter build web  --no-web-resources-cdn  
+        env:
+          NODE_OPTIONS: '--max_old_space_size=8192'  
+
+      - name: Deploy to EdgeOne
+        run: |
+          npx edgeone pages deploy build/web \
+            -n ${{ secrets.EDGEONE_PROJECT_NAME }} \ 
+            -t ${{ secrets.EDGEONE_API_TOKEN }} [-e <env>]       
+        env:
+          EDGEONE_API_TOKEN: ${{ secrets.EDGEONE_API_TOKEN }}  
