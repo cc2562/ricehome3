@@ -22,7 +22,7 @@ jobs:
         run: flutter pub get
 
       - name: Build Web Release
-        run: flutter build web  --no-web-resources-cdn  
+        run: ./build.sh --no-web-resources-cdn
         env:
           NODE_OPTIONS: '--max_old_space_size=8192'  
 
