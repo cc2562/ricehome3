@@ -33,7 +33,7 @@ class _MainlandState extends State<Mainland> with AutomaticKeepAliveClientMixin{
         ),
 
         Container(
-          margin: EdgeInsets.fromLTRB(40, 0, 20, 200),
+          margin: EdgeInsets.fromLTRB(40, 0, 20, 15.h),
           alignment: Alignment.bottomLeft,
           child: setSize(),
         ),
@@ -42,7 +42,7 @@ class _MainlandState extends State<Mainland> with AutomaticKeepAliveClientMixin{
     );
   }
   Widget setSize(){
-    if(ResponsiveBreakpoints.of(context).smallerOrEqualTo(DESKTOP)){
+    if(ResponsiveBreakpoints.of(context).smallerOrEqualTo(MOBILE)){
       return Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.end,

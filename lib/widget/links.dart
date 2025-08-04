@@ -18,7 +18,7 @@ class _LinksState extends State<Links> {
   Widget build(BuildContext context) {
     return Container(
       alignment: Alignment.bottomLeft,
-      margin: EdgeInsets.fromLTRB(40, 0, 20, 110),
+      margin: EdgeInsets.fromLTRB(40, 0, 20, 10.h),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.end,
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -26,7 +26,7 @@ class _LinksState extends State<Links> {
           GridView(
             shrinkWrap: true,
             physics: NeverScrollableScrollPhysics(),
-            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: chooseAxisCount(),childAspectRatio: ResponsiveBreakpoints.of(context).isMobile?3:2.5,crossAxisSpacing: 1.w),
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: chooseAxisCount(),childAspectRatio: setSize(),crossAxisSpacing: 1.w),
             children: [
               //小世界
               Bounceable(
@@ -249,6 +249,8 @@ class _LinksState extends State<Links> {
       return 1;
     }else if(ResponsiveBreakpoints.of(context).isDesktop){
       return 2;
+    }else if(ResponsiveBreakpoints.of(context).isTablet){
+      return 1;
     }else{
       return 4;
     }
@@ -266,6 +268,17 @@ class _LinksState extends State<Links> {
       return 8.w;
     }else{
       return 4.w;
+    }
+  }
+  double setSize(){
+    if(ResponsiveBreakpoints.of(context).isMobile){
+      return 3.5;
+    }else if(ResponsiveBreakpoints.of(context).isDesktop){
+      return 3;
+    }else if(ResponsiveBreakpoints.of(context).isTablet){
+      return 3;
+    }else{
+      return 2.5;
     }
   }
 }

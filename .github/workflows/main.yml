@@ -21,6 +21,9 @@ jobs:
       - name: Install Dependencies
         run: flutter pub get
 
+      - name: Set Permission
+        run: chmod +x build.sh
+
       - name: Build Web Release
         run: ./build.sh --no-web-resources-cdn
         env:

@@ -40,7 +40,8 @@ class MyApp extends StatelessWidget {
           child: child!,
           breakpoints: [
             const Breakpoint(start: 0, end: 450, name: MOBILE),
-            const Breakpoint(start: 451, end: 1440, name: DESKTOP),
+            const Breakpoint(start: 451, end: 770,name: TABLET),
+            const Breakpoint(start: 771, end: 1440, name: DESKTOP),
             const Breakpoint(start: 1441, end: double.infinity, name: '4K'),
           ],
         ),
