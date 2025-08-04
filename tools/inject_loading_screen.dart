@@ -105,7 +105,7 @@ function hideLoadingScreen() {
     
     // 可选：完全移除元素
     // loadingScreen.remove();
-  }, 500);
+  }, 300);
 }
 
 // 初始化加载逻辑
@@ -116,12 +116,12 @@ const loaderConfig = {
   hostElement: document.getElementById('flutter-host')
 ''';
 
-  if (localAssets) {
-    loaderLogic += ''',
-  canvasKitBaseUrl: "assets/canvaskit/",
-  canvasKitVariant: "full"
-''';
-  }
+//  if (localAssets) {
+//    loaderLogic += ''',
+//  canvasKitBaseUrl: "assets/canvaskit/",
+//  canvasKitVariant: "full"
+//''';
+//  }
 
   loaderLogic += '''
 };
@@ -133,13 +133,13 @@ try {
     onEntrypointLoaded: async function(engineInitializer) {
       try {
         console.log('[LOADER] Flutter entrypoint loaded');
-        updateLoadingText('Initializing engine...');
+        updateLoadingText('初始化Flutter引擎...');
         
         // 初始化引擎
         const appRunner = await engineInitializer.initializeEngine();
         console.log('[LOADER] Engine initialized');
         
-        updateLoadingText('Starting application...');
+        updateLoadingText('即将呈现...');
         
         // 运行应用
         await appRunner.runApp();
@@ -149,7 +149,8 @@ try {
         hideLoadingScreen();
       } catch (error) {
         console.error('[LOADER] Error during initialization:', error);
-        updateLoadingText('Initialization error: ' + error.message);
+       //updateLoadingText('Initialization error: ' + error.message);
+       updateLoadingText('很快就好啦');
         hideLoadingScreen();
       }
     }
