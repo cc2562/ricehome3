@@ -95,13 +95,7 @@ function createRocketLoadingScreen() {
       left: 0;
       height: 100%;
       width: 0%;
-      background: linear-gradient(90deg, 
-        rgba(255, 255, 255, 0.9) 0%,
-        rgba(200, 230, 255, 0.8) 25%,
-        rgba(150, 200, 255, 0.9) 50%,
-        rgba(100, 180, 255, 1) 75%,
-        rgba(255, 255, 255, 1) 100%
-      );
+      background: #ffffff;
       border-radius: 6px;
       transition: width 0.5s ease;
       box-shadow: 
