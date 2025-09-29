@@ -221,6 +221,79 @@ function createRocketLoadingScreen() {
     @keyframes fadeOut {
       to { opacity: 0; visibility: hidden; }
     }
+
+    /* 响应式设计 */
+    @media (max-width: 768px) {
+      .progress-corner {
+        top: 20px;
+        left: 20px;
+        right: 20px;
+        width: auto;
+      }
+      
+      .progress-corner-percent {
+        font-size: 4rem;
+      }
+      
+      .progress-corner-label {
+        font-size: 1.2rem;
+      }
+      
+      .mission-title {
+        font-size: 1.5rem;
+      }
+      
+      .progress-background-text {
+        font-size: 25vw;
+      }
+      
+      .rocket-container {
+        width: 90%;
+        margin: 20px 0;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .progress-corner {
+        top: 15px;
+        left: 15px;
+        right: 15px;
+        padding: 10px 15px;
+      }
+      
+      .progress-corner-percent {
+        font-size: 3rem;
+      }
+      
+      .progress-corner-label {
+        font-size: 1rem;
+        letter-spacing: 1px;
+      }
+      
+      .mission-title {
+        font-size: 1.2rem;
+      }
+      
+      .progress-background-text {
+        font-size: 30vw;
+      }
+      
+      .rocket-container {
+        width: 85%;
+        height: 80px;
+        margin: 15px 0;
+      }
+      
+      .rocket {
+        width: 60px;
+        height: 40px;
+      }
+      
+      .rocket-body {
+        width: 40px;
+        height: 20px;
+      }
+    }
   `;
   
   document.head.appendChild(style);
