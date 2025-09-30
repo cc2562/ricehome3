@@ -27,7 +27,15 @@ jobs:
       - name: Build Web Release
         run: ./build.sh --no-web-resources-cdn
         env:
-          NODE_OPTIONS: '--max_old_space_size=8192'  
+          NODE_OPTIONS: '--max_old_space_size=8192'
+
+      - name: Publish to Cloudflare Pages
+        uses: cloudflare/pages-action@v1
+        with:
+          accountId: '0afe5bc844ebf46ebb51a537d28bbb41'
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          directory: 'build/web'
+          projectName: 'ricehome'
 
 
       - name: Deploy to EdgeOne Pages
